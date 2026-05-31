@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Coffee image placeholder</title>
+  <desc id="desc">A calm milk and coffee colored placeholder for a user supplied coffee photo.</desc>
+  <rect width="900" height="700" fill="#efe6da"/>
+  <rect x="64" y="64" width="772" height="572" rx="26" fill="#f8f2ea" stroke="#d9cbb9" stroke-width="4"/>
+  <path d="M328 264h218v98c0 68-49 124-109 124s-109-56-109-124v-98z" fill="#fffaf4" stroke="#3a261d" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M546 292h34c42 0 70 25 70 62s-28 62-70 62h-34" fill="none" stroke="#3a261d" stroke-width="14" stroke-linecap="round"/>
+  <path d="M348 292h178" stroke="#8b5e3c" stroke-width="18" stroke-linecap="round"/>
+  <path d="M370 240c-18-30 18-48 0-78M440 240c-18-30 18-48 0-78M510 240c-18-30 18-48 0-78" fill="none" stroke="#8f8060" stroke-width="10" stroke-linecap="round"/>
+  <text x="450" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#3a261d">Add your coffee photo</text>
+  <text x="450" y="592" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#6d5546">assets/coffee/&lt;coffee-id&gt;-1.jpg</text>
+</svg>
