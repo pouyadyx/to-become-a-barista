@@ -1,6 +1,7 @@
 (function () {
   const coffees = window.COFFEE_DATA || [];
-  let currentLang = "zh";
+  const languageStorageKey = "barista-guide-language";
+  let currentLang = readStoredLanguage();
   let currentFilter = "all";
   let currentQuery = "";
   const placeholderImage = "assets/coffee/placeholder.svg";
@@ -160,6 +161,29 @@
     return coffees[dateIndex(dateString || localDateString())].id;
   }
 
+  function readStoredLanguage() {
+    let stored = "";
+    try {
+      stored = window.localStorage && window.localStorage.getItem(languageStorageKey);
+    } catch (error) {
+      stored = "";
+    }
+    if (stored === "en" || stored === "zh") return stored;
+    if (typeof document === "undefined") return "zh";
+    const match = document.cookie.match(new RegExp(`(?:^|; )${languageStorageKey}=([^;]*)`));
+    stored = match ? decodeURIComponent(match[1]) : "";
+    return stored === "en" || stored === "zh" ? stored : "zh";
+  }
+
+  function storeLanguage(lang) {
+    try {
+      if (window.localStorage) window.localStorage.setItem(languageStorageKey, lang);
+    } catch (error) {
+      // Language persistence is optional; rendering still works if storage is blocked.
+    }
+    if (typeof document !== "undefined") document.cookie = `${languageStorageKey}=${encodeURIComponent(lang)}; path=/; max-age=31536000; SameSite=Lax`;
+  }
+
   function text(value, lang) {
     if (!value) return "";
     return value[lang] || value.zh || value.en || "";
@@ -248,6 +272,7 @@
 
   function setLanguage(lang) {
     currentLang = lang;
+    storeLanguage(lang);
     document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
     document.querySelectorAll("[data-lang]").forEach((button) => {
       button.classList.toggle("active", button.dataset.lang === lang);
@@ -268,8 +293,8 @@
           ${link("faq.html", t.faq, active === "faq")}
         </nav>
         <div class="lang-switch" aria-label="Language">
-          <button type="button" data-lang="zh" class="active">中文</button>
-          <button type="button" data-lang="en">English</button>
+          <button type="button" data-lang="zh" class="${currentLang === "zh" ? "active" : ""}">中文</button>
+          <button type="button" data-lang="en" class="${currentLang === "en" ? "active" : ""}">English</button>
         </div>
       </header>`;
   }

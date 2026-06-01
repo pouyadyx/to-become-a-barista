@@ -125,6 +125,16 @@ test("daily coffee is stable for a date and changes across dates", () => {
   assert.ok(app.includes("compositionHero(daily)"), "daily coffee should use the hand-drawn cup visual");
 });
 
+test("language choice persists across page loads", () => {
+  const app = read("app.js");
+  assert.ok(app.includes('const languageStorageKey = "barista-guide-language"'), "language persistence key should exist");
+  assert.ok(app.includes("let currentLang = readStoredLanguage()"), "initial language should come from storage");
+  assert.ok(app.includes("storeLanguage(lang)"), "language switch should save the chosen language");
+  assert.ok(app.includes('localStorage.setItem(languageStorageKey, lang)'), "chosen language should be written to localStorage");
+  assert.ok(app.includes("document.cookie"), "language persistence should fall back to cookies when localStorage is unavailable");
+  assert.ok(app.includes('class="${currentLang === "en" ? "active" : ""}"'), "English button active state should render from current language");
+});
+
 test("coffee types page uses image-first cards without descriptions", () => {
   const app = read("app.js");
   assert.ok(app.includes('searchPanel("coffee")'), "coffee page should use coffee-only search controls");
