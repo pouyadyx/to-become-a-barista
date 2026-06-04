@@ -51,6 +51,9 @@ test("coffee catalog has expanded bilingual content, matched photos, text steps,
   assert.ok(Array.isArray(coffees));
   assert.ok(coffees.length >= 26, "expected at least 26 coffees");
   assert.ok(coffees.some((coffee) => coffee.id === "spanish-latte"), "Spanish latte is required");
+  ["matcha-latte", "coconut-latte", "espresso-tonic", "einspanner"].forEach((id) => {
+    assert.ok(coffees.some((coffee) => coffee.id === id), `${id} is required`);
+  });
   assert.ok(!coffees.some((coffee) => coffee.id === "french-press"), "French press should be removed");
 
   coffees.forEach((coffee) => {
@@ -215,6 +218,9 @@ test("search can find coffee, domestic cafe, flavor, and bilingual terms", () =>
   const api = loadAppApi();
   assert.ok(api.searchCatalog("Spanish Latte", "all", "zh").some((item) => item.id === "spanish-latte"));
   assert.ok(api.searchCatalog("Spanish Latte", "all", "en").some((item) => item.id === "spanish-latte"));
+  assert.ok(api.searchCatalog("抹茶", "all", "zh").some((item) => item.id === "matcha-latte"));
+  assert.ok(api.searchCatalog("matcha", "all", "en").some((item) => item.id === "matcha-latte"));
+  assert.ok(api.searchCatalog("tonic", "all", "en").some((item) => item.id === "espresso-tonic"));
   assert.ok(api.searchCatalog("Shanghai", "all", "en").some((item) => item.type === "cafe"));
   assert.ok(api.searchCatalog("chocolate", "all", "en").some((item) => item.id === "mocha"));
 });

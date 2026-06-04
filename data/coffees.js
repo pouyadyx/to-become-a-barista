@@ -70,6 +70,7 @@
     latte: ["laColombe"],
     "iced-latte": ["arabica"],
     "spanish-latte": ["agate"],
+    "matcha-latte": ["arabica"],
     cappuccino: ["reggio", "gilli"],
     "flat-white": ["proud", "kaffeine"],
     mocha: ["laColombe"],
@@ -83,7 +84,10 @@
     "irish-coffee": ["buena"],
     "vienna-coffee": ["central", "demel"],
     "vietnamese-coffee": ["giang", "cong"],
+    "coconut-latte": ["arabica"],
+    "espresso-tonic": ["stumptown", "laColombe"],
     "turkish-coffee": ["florian"],
+    einspanner: ["central", "demel"],
     "cafe-au-lait": ["cafeBeignet"],
   };
 
@@ -123,6 +127,7 @@
     latte: ["latte", "latte-art", "caffe-latte"],
     "iced-latte": ["iced-latte", "iced-milk-coffee", "latte-with-ice"],
     "spanish-latte": ["spanish-latte", "condensed-milk-latte", "sweet-iced-latte"],
+    "matcha-latte": ["matcha-latte", "green-tea-latte", "matcha-milk"],
     cappuccino: ["cappuccino", "cappuccino-foam", "cappuccino-cup"],
     "flat-white": ["flat-white", "flat-white-coffee", "microfoam-coffee"],
     mocha: ["mocha-coffee", "chocolate-coffee", "caffe-mocha"],
@@ -136,7 +141,10 @@
     "irish-coffee": ["irish-coffee", "whiskey-coffee", "coffee-with-cream-glass"],
     "vienna-coffee": ["vienna-coffee", "viennese-coffee", "coffee-with-whipped-cream"],
     "vietnamese-coffee": ["vietnamese-coffee", "phin-coffee", "condensed-milk-coffee"],
+    "coconut-latte": ["coconut-latte", "coconut-milk-coffee", "iced-coconut-latte"],
+    "espresso-tonic": ["espresso-tonic", "tonic-coffee", "iced-espresso-tonic"],
     "turkish-coffee": ["turkish-coffee", "cezve-coffee", "turkish-coffee-cup"],
+    einspanner: ["einspanner", "viennese-cream-coffee", "coffee-with-cream"],
     "cafe-au-lait": ["cafe-au-lait", "coffee-with-hot-milk", "french-milk-coffee"],
   };
 
@@ -161,6 +169,7 @@
     latte: composition("tall", 240, [layer("浓缩咖啡", "espresso", 18, "#4a1f0f"), layer("牛奶", "milk", 72, "#d99a52"), layer("薄奶泡", "thin foam", 10, "#f6ead8")], "拿铁以牛奶为主体，奶泡薄，入口柔和。", "Latte is milk-forward with a thin foam layer and a soft taste."),
     "iced-latte": composition("iced", 260, [layer("冷牛奶", "cold milk", 65, "#edd5b6"), layer("浓缩咖啡", "espresso", 18, "#4a1f0f"), layer("冰块", "ice", 17, "#eef6f7")], "冰拿铁突出冷牛奶和浓缩的颜色对比。", "Iced latte highlights the contrast between cold milk and espresso."),
     "spanish-latte": composition("iced", 240, [layer("炼乳", "condensed milk", 16, "#f6dca9"), layer("牛奶", "milk", 62, "#ead0a8"), layer("浓缩咖啡", "espresso", 22, "#4a1f0f")], "西班牙拿铁的重点是炼乳带来的甜感和层次。", "Spanish latte is defined by condensed milk sweetness and visible layering."),
+    "matcha-latte": composition("tall", 220, [layer("抹茶", "matcha", 26, "#668b3f"), layer("牛奶", "milk", 64, "#e8d4ad"), layer("薄奶泡", "thin foam", 10, "#f6ead8")], "纯抹茶拿铁不含咖啡，重点是抹茶和牛奶的柔和融合。", "Pure matcha latte contains no coffee; the focus is matcha softened by milk."),
     cappuccino: composition("tall", 180, [layer("浓缩咖啡", "espresso", 30, "#4a1f0f"), layer("牛奶", "milk", 40, "#d9954f"), layer("厚奶泡", "thick foam", 30, "#f8ead8")], "卡布奇诺比拿铁奶泡更厚，咖啡感也更明显。", "Cappuccino has thicker foam than latte and a more obvious coffee presence."),
     "flat-white": composition("tall", 160, [layer("浓缩咖啡", "espresso", 40, "#4a1f0f"), layer("牛奶", "milk", 50, "#dfad73"), layer("薄奶泡", "microfoam", 10, "#f6ead8")], "馥芮白杯量小、奶泡薄，因此咖啡感更强。", "Flat white is smaller with thin microfoam, so the coffee tastes stronger."),
     mocha: composition("tall", 220, [layer("巧克力酱", "chocolate", 12, "#2f130c"), layer("浓缩咖啡", "espresso", 20, "#4a1f0f"), layer("牛奶", "milk", 58, "#d99955"), layer("奶油", "cream", 10, "#f8ead8")], "摩卡在拿铁结构中加入巧克力，甜苦感更明显。", "Mocha adds chocolate to a latte-like structure for sweet cocoa bitterness."),
@@ -174,7 +183,10 @@
     "irish-coffee": composition("glass", 180, [layer("威士忌咖啡", "whiskey coffee", 78, "#6a3518"), layer("奶油", "cream", 22, "#f8ead8")], "爱尔兰咖啡通常用奶油漂浮在热酒咖啡上。", "Irish coffee usually floats cream over hot whiskey coffee."),
     "vienna-coffee": composition("glass", 180, [layer("黑咖啡", "black coffee", 70, "#5a2a14"), layer("鲜奶油", "whipped cream", 30, "#f8ead8")], "维也纳咖啡以黑咖啡和奶油的对比为重点。", "Vienna coffee emphasizes the contrast between black coffee and cream."),
     "vietnamese-coffee": composition("glass", 180, [layer("炼乳", "condensed milk", 28, "#f6dca9"), layer("越南滴滤咖啡", "phin coffee", 52, "#4a1f0f"), layer("冰块", "ice", 20, "#eef6f7")], "越南咖啡常见炼乳层和浓厚滴滤咖啡。", "Vietnamese coffee often shows condensed milk and strong phin-brewed coffee."),
+    "coconut-latte": composition("iced", 240, [layer("生椰乳", "coconut milk", 46, "#f4dfc4"), layer("牛奶/椰奶", "milk / coconut milk", 28, "#ead0a8"), layer("浓缩咖啡", "espresso", 16, "#4a1f0f"), layer("冰块", "ice", 10, "#eef6f7")], "生椰拿铁用椰香奶底承接浓缩，冰饮时层次最明显。", "Coconut latte uses a coconut milk base to carry espresso, with the clearest layers when iced."),
+    "espresso-tonic": composition("iced", 220, [layer("通宁水", "tonic water", 58, "#d9e7dd"), layer("冰块", "ice", 24, "#eef6f7"), layer("浓缩咖啡", "espresso", 18, "#4a1f0f")], "浓缩通宁用气泡和苦甜感托起浓缩，视觉上有清楚分层。", "Espresso tonic lifts espresso with fizz and bittersweet tonic, often showing a clear layered look."),
     "turkish-coffee": composition("demitasse", 70, [layer("土耳其咖啡", "turkish coffee", 82, "#4a1f0f"), layer("咖啡粉沉淀", "grounds", 18, "#2a120a")], "土耳其咖啡不过滤，杯底会有细粉沉淀。", "Turkish coffee is unfiltered, leaving fine grounds at the bottom."),
+    einspanner: composition("glass", 180, [layer("冷/热咖啡", "coffee", 68, "#5a2a14"), layer("鲜奶油", "whipped cream", 32, "#f8ead8")], "爱因斯班咖啡以厚奶油层和咖啡主体形成对比，适合慢慢饮用。", "Einspanner contrasts a thick cream cap with the coffee body and is meant for slow sipping."),
     "cafe-au-lait": composition("bowl", 240, [layer("热黑咖啡", "hot brewed coffee", 50, "#5a2a14"), layer("热牛奶", "hot milk", 50, "#dfad73")], "欧蕾通常是热黑咖啡和热牛奶接近等量混合。", "Cafe au lait is usually brewed coffee and hot milk in roughly equal parts."),
   };
 
@@ -210,6 +222,7 @@
     ["latte", "milk", "拿铁", "Latte", "浓缩加大量蒸汽牛奶和薄奶泡，柔和易入口。", "Espresso with plenty of steamed milk and thin foam, gentle and approachable.", "1 份浓缩 + 180-240ml 蒸汽牛奶 + 薄奶泡。", "1 espresso shot plus 180-240ml steamed milk and thin foam.", ["milk", "smooth", "beginner", "拿铁", "牛奶"], ["萃取浓缩。", "打发细腻牛奶。", "融合牛奶和浓缩。", "铺平奶面或拉花。"], ["Extract espresso.", "Steam silky milk.", "Integrate milk and espresso.", "Finish smooth or with latte art."]],
     ["iced-latte", "iced", "冰拿铁", "Iced Latte", "冰牛奶加浓缩，奶味清爽，咖啡感直接。", "Cold milk and espresso over ice, refreshing with a direct coffee edge.", "1-2 份浓缩 + 180-220ml 冷牛奶 + 冰块。", "1-2 espresso shots plus 180-220ml cold milk and ice.", ["iced", "milk", "latte", "冰拿铁"], ["杯中加冰。", "倒入冷牛奶。", "萃取浓缩并稍降温。", "慢慢倒在牛奶上。"], ["Add ice.", "Pour cold milk.", "Extract espresso and cool briefly.", "Pour slowly over milk."]],
     ["spanish-latte", "special", "西班牙拿铁", "Spanish Latte", "浓缩、牛奶和炼乳组合，甜感明显，常见于中东和亚洲咖啡馆。", "Espresso, milk, and condensed milk, sweet and common in Middle Eastern and Asian cafes.", "1 份浓缩 + 150-200ml 牛奶 + 15-30g 炼乳。", "1 espresso shot plus 150-200ml milk and 15-30g condensed milk.", ["sweet", "condensed milk", "middle east", "西班牙拿铁", "炼乳"], ["杯中加入炼乳。", "倒入牛奶并搅匀。", "加冰或热蒸奶。", "倒入浓缩并调整甜度。"], ["Add condensed milk.", "Pour in milk and stir.", "Add ice or steamed milk.", "Pour espresso and adjust sweetness."]],
+    ["matcha-latte", "special", "抹茶拿铁", "Matcha Latte", "抹茶粉或抹茶液与牛奶融合，不加入咖啡，是咖啡馆菜单里常见的非咖啡拿铁饮品。", "Matcha powder or matcha concentrate blended with milk, without coffee; a common non-coffee latte on cafe menus.", "2-3g 抹茶粉 + 30ml 温水调匀 + 150-200ml 牛奶。", "2-3g matcha whisked with 30ml warm water plus 150-200ml milk.", ["matcha", "green tea", "milk", "non-coffee", "抹茶", "无咖啡"], ["筛入抹茶粉。", "用温水搅成细腻抹茶液。", "加入热牛奶或冰牛奶。", "轻轻融合并保留绿色层次。"], ["Sift matcha powder.", "Whisk with warm water until smooth.", "Add hot or cold milk.", "Combine gently while keeping the green tone visible."]],
     ["cappuccino", "milk", "卡布奇诺", "Cappuccino", "浓缩、蒸汽牛奶和厚奶泡平衡，咖啡感比拿铁更突出。", "Espresso, steamed milk, and thicker foam in balance, stronger than a latte.", "1 份浓缩 + 约等量蒸汽牛奶 + 奶泡。", "1 espresso shot with roughly equal steamed milk and foam.", ["foam", "milk", "italian", "卡布", "奶泡"], ["萃取浓缩。", "打发较厚奶泡。", "倒入牛奶并保留泡沫。", "表面可撒可可粉。"], ["Extract espresso.", "Steam thicker foam.", "Pour milk while keeping foam.", "Optionally dust cocoa."]],
     ["flat-white", "milk", "馥芮白", "Flat White", "双份浓缩搭配细腻薄奶泡，杯量小于拿铁，咖啡感更强。", "A smaller milk drink with espresso and silky microfoam, stronger than a latte.", "双份浓缩 + 120-160ml 蒸汽牛奶 + 极薄微泡。", "Double espresso plus 120-160ml steamed milk with thin microfoam.", ["australia", "new zealand", "microfoam", "馥芮白"], ["萃取双份浓缩。", "打发细腻少泡牛奶。", "快速融合。", "保持表面平整有光泽。"], ["Extract double espresso.", "Steam fine low-foam milk.", "Integrate quickly.", "Keep the surface glossy and flat."]],
     ["mocha", "special", "摩卡", "Mocha", "拿铁中加入巧克力，兼具咖啡、牛奶和可可甜苦平衡。", "A latte with chocolate, balancing coffee, milk, cocoa sweetness, and bitterness.", "1 份浓缩 + 150-200ml 牛奶 + 15-25g 巧克力酱。", "1 espresso shot plus 150-200ml milk and 15-25g chocolate sauce.", ["chocolate", "sweet", "milk", "摩卡", "巧克力"], ["杯中加入巧克力酱。", "萃取浓缩并搅匀。", "倒入蒸汽牛奶。", "可加奶油或可可粉。"], ["Add chocolate sauce.", "Extract espresso and mix.", "Pour steamed milk.", "Optionally top with cream or cocoa."]],
@@ -223,7 +236,10 @@
     ["irish-coffee", "dessert", "爱尔兰咖啡", "Irish Coffee", "热咖啡、爱尔兰威士忌、糖和奶油组合，温暖浓郁。", "Hot coffee, Irish whiskey, sugar, and cream: warm, rich, and spirited.", "120ml 热咖啡 + 30-45ml 威士忌 + 糖 + 奶油。", "120ml hot coffee plus 30-45ml whiskey, sugar, and cream.", ["whiskey", "cream", "hot", "爱尔兰"], ["预热玻璃杯。", "加入糖、咖啡和威士忌。", "搅拌至糖溶解。", "沿勺背铺上奶油。"], ["Preheat glass.", "Add sugar, coffee, and whiskey.", "Stir until sugar dissolves.", "Float cream over a spoon."]],
     ["vienna-coffee", "dessert", "维也纳咖啡", "Vienna Coffee", "黑咖或浓缩加鲜奶油，甜润、复古，适合慢慢喝。", "Black coffee or espresso with whipped cream, sweet, old-world, and slow-sipping.", "1 杯黑咖或 1-2 份浓缩 + 适量鲜奶油。", "1 cup black coffee or 1-2 espresso shots plus whipped cream.", ["vienna", "cream", "classic", "维也纳"], ["准备热黑咖或浓缩。", "轻打发鲜奶油。", "铺在咖啡表面。", "可撒巧克力或可可粉。"], ["Prepare hot black coffee or espresso.", "Lightly whip cream.", "Place cream on top.", "Optionally add chocolate or cocoa."]],
     ["vietnamese-coffee", "special", "越南咖啡", "Vietnamese Coffee", "常用滴滤壶和炼乳，甜、浓、厚重，冰饮尤其常见。", "Often brewed with a phin and condensed milk; sweet, strong, heavy-bodied, and often iced.", "20g 咖啡粉 + 30g 炼乳 + 100ml 热水。", "20g coffee, 30g condensed milk, and 100ml hot water.", ["condensed milk", "vietnam", "phin", "越南", "炼乳"], ["杯中加入炼乳。", "装好 phin 滴滤壶。", "闷蒸后继续注水。", "滴滤完成后搅拌，可加冰。"], ["Add condensed milk.", "Set up the phin filter.", "Bloom, then fill with water.", "Stir after dripping; add ice if desired."]],
+    ["coconut-latte", "special", "生椰拿铁", "Coconut Latte", "椰乳或厚椰奶与浓缩咖啡组合，椰香明显，冰饮时甜润且有层次。", "Coconut milk or rich coconut cream with espresso, aromatic, gently sweet, and especially layered when iced.", "1 份浓缩 + 120-180ml 生椰乳或椰奶 + 冰块。", "1 espresso shot plus 120-180ml coconut milk or coconut cream over ice.", ["coconut", "iced", "milk", "layered", "生椰", "椰乳"], ["杯中加冰。", "倒入生椰乳或椰奶。", "萃取浓缩并稍降温。", "缓慢倒入形成层次。"], ["Add ice.", "Pour in coconut milk or coconut cream.", "Extract espresso and cool briefly.", "Pour slowly to create layers."]],
+    ["espresso-tonic", "iced", "浓缩通宁", "Espresso Tonic", "通宁水、冰块和浓缩咖啡组成，气泡感清爽，苦甜与咖啡香气对比强。", "Tonic water, ice, and espresso make a sparkling drink with crisp bittersweet contrast and coffee aroma.", "120-180ml 通宁水 + 冰块 + 1 份浓缩。", "120-180ml tonic water, ice, and 1 espresso shot.", ["tonic", "sparkling", "iced", "espresso", "通宁", "气泡"], ["杯中加满冰块。", "倒入冷藏通宁水。", "萃取浓缩并稍降温。", "沿杯壁缓慢倒入浓缩。"], ["Fill the glass with ice.", "Pour in chilled tonic water.", "Extract espresso and cool briefly.", "Pour espresso slowly down the glass wall."]],
     ["turkish-coffee", "black", "土耳其咖啡", "Turkish Coffee", "极细粉直接煮制，不过滤，口感厚重，杯底有咖啡渣。", "Very finely ground coffee boiled without filtering, full-bodied with grounds at the bottom.", "每杯 6-8g 极细咖啡粉 + 60-70ml 水。", "6-8g very fine coffee plus 60-70ml water per cup.", ["turkish", "boiled", "strong", "土耳其"], ["把水和极细粉加入 cezve。", "可按口味加糖。", "小火加热至起泡。", "倒入小杯并静置。"], ["Add water and fine coffee to a cezve.", "Add sugar if desired.", "Heat gently until foamy.", "Pour into a small cup and let settle."]],
+    ["einspanner", "dessert", "爱因斯班咖啡", "Einspanner", "黑咖或浓缩上覆盖厚鲜奶油，咖啡穿过奶油入口，甜润但仍保留咖啡主体。", "Black coffee or espresso topped with thick whipped cream, sweet and rich while keeping the coffee body intact.", "120-150ml 黑咖或 1-2 份浓缩 + 适量鲜奶油。", "120-150ml black coffee or 1-2 espresso shots plus whipped cream.", ["vienna", "cream", "dessert", "einspanner", "爱因斯班"], ["准备热黑咖或浓缩。", "轻打发冷藏淡奶油。", "把奶油铺在咖啡表面。", "不搅拌，直接穿过奶油饮用。"], ["Prepare hot black coffee or espresso.", "Lightly whip chilled cream.", "Float the cream over the coffee.", "Drink through the cream without stirring."]],
     ["cafe-au-lait", "milk", "欧蕾咖啡", "Cafe au Lait", "黑咖与热牛奶混合，通常不用浓缩，口感家常温和。", "Brewed coffee mixed with hot milk, usually not espresso-based, gentle and homey.", "1 份热黑咖 + 1 份热牛奶。", "1 part hot brewed coffee plus 1 part hot milk.", ["french", "milk", "breakfast", "欧蕾"], ["冲煮一杯黑咖。", "加热牛奶但不打厚泡。", "按 1:1 混合。", "可搭配面包或甜点。"], ["Brew black coffee.", "Heat milk without thick foam.", "Mix about 1:1.", "Serve with bread or pastry."]],
   ];
 
@@ -238,6 +254,9 @@
     const tipsEn = `When making ${en} for the first time, use the listed ratio and write down the taste before changing one variable. That makes it easier to tell whether the issue comes from extraction, dilution, temperature, or milk handling.`;
     const domestic = domesticByGroup[category];
     const international = (internationalRefs[id] || ["laColombe"]).map((key) => cafeRef(key, cafeWhy[key][0], cafeWhy[key][1]));
+    const ingredients = id === "matcha-latte"
+      ? t("抹茶粉或抹茶液、牛奶，以及需要时使用的糖浆或冰块。", "Matcha powder or matcha concentrate, milk, and optional syrup or ice.")
+      : t(category === "milk" || category === "special" ? "咖啡、牛奶，以及该饮品需要的糖浆、炼乳、巧克力或奶泡。" : "咖啡、过滤水，以及该饮品需要的冰块、奶油、酒或甜品配料。", category === "milk" || category === "special" ? "Coffee, milk, and any syrup, condensed milk, chocolate, or foam needed for the drink." : "Coffee, filtered water, and any ice, cream, spirits, or dessert ingredients needed for the drink.");
     return {
       id,
       category,
@@ -246,7 +265,7 @@
       summary: t(`${summaryZh} 对新手来说，最值得观察的是它与相近饮品在浓度、杯量、奶量或冰热状态上的区别。制作时先把配比固定下来，再微调口味，会比每次随意改变更容易进步。`, `${summaryEn} For beginners, the key is to compare its strength, cup size, milk amount, or hot/cold style with nearby drinks. Keep the ratio stable first, then adjust one detail at a time so progress is easier to taste.`),
       origin: t(originZh, originEn),
       flavor: t(flavorZh, flavorEn),
-      ingredients: t(category === "milk" || category === "special" ? "咖啡、牛奶，以及该饮品需要的糖浆、炼乳、巧克力或奶泡。" : "咖啡、过滤水，以及该饮品需要的冰块、奶油、酒或甜品配料。", category === "milk" || category === "special" ? "Coffee, milk, and any syrup, condensed milk, chocolate, or foam needed for the drink." : "Coffee, filtered water, and any ice, cream, spirits, or dessert ingredients needed for the drink."),
+      ingredients,
       ratio: t(ratioZh, ratioEn),
       composition: compositionCatalog[id],
       steps: t(stepsZh, stepsEn),
