@@ -620,7 +620,7 @@
 
   function renderCoffees() {
     layout("coffees", `
-      ${hero(ui[currentLang].coffees, currentLang === "zh" ? "按层级筛选和搜索 28 款经典咖啡。" : "Filter and search 28 classic coffee drinks by level and category.", currentLang === "zh" ? "咖啡地图" : "Coffee map")}
+      ${hero(ui[currentLang].coffees, currentLang === "zh" ? `按层级筛选和搜索 ${coffees.length} 款经典咖啡。` : `Filter and search ${coffees.length} classic coffee drinks by level and category.`, currentLang === "zh" ? "咖啡地图" : "Coffee map")}
       ${searchPanel("coffee")}
       <section class="card-grid coffee-type-grid"></section>`);
     renderCoffeeDirectory();
